@@ -1,14 +1,31 @@
-#IGNORE COMPLETELY FOR NOW
+This is how your project directory should look:
+
+kafka-wine-project/
+├── docker-compose.yml
+├── producer/
+│   ├── Dockerfile
+│   ├── producer.py
+│   └── data/
+│       ├── restaurant_data.csv
+│       └── supplier_data.csv
+└── consumer/
+    ├── Dockerfile
+    └── consumer.py
+|
+|__ results/
+    |--feasibility_auctions.csv
+
+STEPS TO RUN PROJECT
 1. Have docker desktop setup on your pc. Then open docker desktop.
 2. In VScode go to the project directory where docker-compose.yml is saved and run:
             docker-compose up --build
 3. While its running wait 10 seconds
 4. Open cmd then run:
             docker ps
-5. After that run this to create a wine_demand topic that wine suppliers will ingest (also in the cmd):
-            docker exec -it kafka-wine-project-kafka-1 /bin/bash -c "kafka-topics.sh --create --topic wine_demand --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1"
+5. After that run this to see topics available (also in the cmd):
+            docker exec -it kafka-wine-project-kafka-1 /bin/bash -c "kafka-topics.sh --list --bootstrap-server localhost:9092
 6. Then in vscode split a terminal. One one side naviagte to the consumer folder and run:
             python consumer.py
 7. Then On the other side of the split terminal navigate to the producer folder and run:
             python producer.py
-8. You should see your producer sending data to kafka wine_demand topic which is then being consumed by the consumer on the other side
+8. You should see your consumer file getting restaurant and supplier data
