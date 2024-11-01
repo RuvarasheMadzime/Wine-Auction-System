@@ -1,0 +1,5 @@
+restaurantname,location,longitude,latitude,Monday_Sun_Times,request_for_red,request_for_rose,request_for_white,distance_from_airport,airport_name
+Cape Bistro,Cape Town,18.4233,-33.9258,10:00,5,3,6,20,Cape Town International
+Jozi Grill,Johannesburg,28.0473,-26.2041,11:00,7,6,5,25,O.R. Tambo International
+Durban Delights,Durban,31.0218,-29.8587,10:00,3,2,4,15,King Shaka International
+Pretoria Palate,Pretoria,28.2293,-25.7479,12:00,8,4,7,30,Wonderboom Airport
